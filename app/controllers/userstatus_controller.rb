@@ -1,9 +1,9 @@
 require "userprofiles_controller"
-require "noapplications_controller"
+require "application_types_controller"
 class UserstatusController < ApplicationController
 	def user
 		@userprofiles = Userprofile.all
-		@noapplications = Noapplication.all
+		 @application_types = ApplicationType.all
 	
 	end
 end

@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  resources :profiles
+
   resources :userprofiles
 
-  resources :noapplications
+  resources :application_types
 
   resources :applications
 

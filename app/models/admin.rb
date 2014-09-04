@@ -5,6 +5,8 @@ class Admin < ActiveRecord::Base
 	before_save :encrypt_password
 	 validates_confirmation_of :password
 	validates_presence_of :password, :on => "create"
+	validates_length_of :password, maximum: 20, minimum: 6
+	validates_length_of :password_confirmation, maximum: 20, minimum: 6
 	 validates_presence_of :email
 	 validates_uniqueness_of :email
 	 # validates :email, presence :true, uniqueness: { case_sensitive :true }

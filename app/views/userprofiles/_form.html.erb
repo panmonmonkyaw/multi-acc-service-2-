@@ -47,9 +47,8 @@
   </div>
   <div class="field">
 
-   <!--  <%= f.input :no_of_application, :as => :check_boxes, :collection => @noapplications.
-     map { |u| [u.no_of_application, u.no_of_application]} %> -->
-     <%= f.input :noapplications, :as => :check_boxes, :collection => Noapplication.all.map { |u| [u.no_of_application]} %>
+   
+     <%= f.input :no_of_application, :as => :select, :collection => ApplicationType.all.map { |u| [u.no_of_application , u.no_of_application]} %>
      
 
   </div>

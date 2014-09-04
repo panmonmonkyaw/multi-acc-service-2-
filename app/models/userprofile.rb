@@ -1,5 +1,5 @@
 class Userprofile < ActiveRecord::Base
-	has_many :noapplications
+	has_many :application_types
 	validates :userid, :first_name, :last_name, :name, :email, :phone_number, presence: true
 	validates_inclusion_of :gender, in: %w(Male Female)
 	#validates :email, :presence true
@@ -8,6 +8,7 @@ class Userprofile < ActiveRecord::Base
 	validates_length_of :first_name, maximum: 30
 	validates_length_of :last_name, maximum: 30, message: "less than 30"
 	validates_length_of :phone_number, in: 7..32, allow_blank: true
+	validates_length_of :name, maximum: 50
 
 	# def before_save
 	# 	@Userprofile.status = "false"

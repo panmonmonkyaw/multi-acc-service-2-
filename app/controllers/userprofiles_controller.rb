@@ -1,4 +1,4 @@
-require "noapplications_controller"
+require "application_types_controller"
 class UserprofilesController < ApplicationController
   before_action :set_userprofile, only: [:show, :edit, :update, :destroy]
 
@@ -6,7 +6,7 @@ class UserprofilesController < ApplicationController
   # GET /userprofiles.json
   def index
     @userprofiles = Userprofile.all
-    @noapplications = Noapplication.all
+     @application_types = ApplicationType.all
   end
 
   # def user
@@ -17,25 +17,25 @@ class UserprofilesController < ApplicationController
   # GET /userprofiles/1
   # GET /userprofiles/1.json
   def show
-    @noapplications = Noapplication.all
+    @application_types = ApplicationType.all
   end
 
   # GET /userprofiles/new
   def new
     @userprofile = Userprofile.new
-    @noapplications = Noapplication.all
+     @application_types = ApplicationType.all
   end
 
   # GET /userprofiles/1/edit
   def edit
-    @noapplications = Noapplication.all
+     @application_types = ApplicationType.all
   end
 
   # POST /userprofiles
   # POST /userprofiles.json
   def create
     @userprofile = Userprofile.new(userprofile_params)
-     @noapplications = Noapplication.all
+      @application_types = ApplicationType.all
      @userprofile.status = "false"
     respond_to do |format|
       if @userprofile.save
